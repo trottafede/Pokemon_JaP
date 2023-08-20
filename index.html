@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div id="center" class="col-12">
+          <h1>Busca tu propio pokemon</h1>
+          <p>simplemente escribe el nombre del pokemon</p>
+          <div id="pokemonInfo"></div>
+          <div>
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="pokemonName"
+                placeholder="Ingresa el nombre o ID del Pokémon"
+              />
+            </div>
+            <div class="mb-3">
+              <button class="btn btn-primary" id="searchButton">Buscar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li onclick="handleClick(1)" class="page-item">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li onclick="handleClick(2)" class="page-item">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li onclick="handleClick(3)" class="page-item">
+                <a class="page-link" href="#">3</a>
+              </li>
+              <li onclick="handleClick(4)" class="page-item">
+                <a class="page-link" href="#">4</a>
+              </li>
+              <li onclick="handleClick(5)" class="page-item">
+                <a class="page-link" href="#">5</a>
+              </li>
+              <li onclick="handleClick(6)" class="page-item">
+                <a class="page-link" href="#">6</a>
+              </li>
+              <li onclick="handleClick(7)" class="page-item">
+                <a class="page-link" href="#">7</a>
+              </li>
+              <li onclick="handleClick(8)" class="page-item">
+                <a class="page-link" href="#">8</a>
+              </li>
+              <li onclick="handleClick(9)" class="page-item">
+                <a class="page-link" href="#">9</a>
+              </li>
+              <li onclick="handleClick(10)" class="page-item">
+                <a class="page-link" href="#">10</a>
+              </li>
+              <li onclick="handleClick(11)" class="page-item">
+                <a class="page-link" href="#">11</a>
+              </li>
+              <li onclick="handleClick(12)" class="page-item">
+                <a class="page-link" href="#">12</a>
+              </li>
+              <li onclick="handleClick(13)" class="page-item">
+                <a class="page-link" href="#">13</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        
+        <div class="d-flex justify-content-center">
+          <div id="spinner" class="spinner-grow text-danger" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+        <!-- array de pokemones -->
+        <div id="pokeArray" class="row g-4"></div>
+      </div>
+    </div>
+
+    <!-- Bootstrap CDN -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

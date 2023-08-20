@@ -1,0 +1,123 @@
+p,
+h1,
+h5 {
+  margin: 0 !important;
+  text-align: center;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+.hideSpinner{
+  display: none !important
+}
+
+#pokemonInfo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.pokemon {
+  border-radius: 40px;
+  padding: 30px;
+  cursor: pointer;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+}
+
+/* Tipo de pokemones y sus colores */
+.normal {
+  background-color: #a8a878;
+}
+
+.fire {
+  background-color: #ff9c54;
+  color: #fff;
+}
+
+.water {
+  background-color: #6390f0;
+  color: #fff;
+}
+
+.grass {
+  background-color: #78c850;
+}
+
+.electric {
+  background-color: #f8d030;
+  color: #fff;
+}
+
+.ice {
+  background-color: #98d8d8;
+}
+
+.fighting {
+  background-color: #c03028;
+  color: #fff;
+}
+
+.poison {
+  background-color: #a040a0;
+  color: #fff;
+}
+
+.ground {
+  background-color: #e0c068;
+}
+
+.flying {
+  background-color: #a890f0;
+  color: #fff;
+}
+
+.psychic {
+  background-color: #f85888;
+  color: #fff;
+}
+
+.bug {
+  background-color: #a8b820;
+}
+
+.rock {
+  background-color: #b8a038;
+}
+
+.ghost {
+  background-color: #705898;
+  color: #fff;
+}
+
+.dragon {
+  background-color: #7038f8;
+  color: #fff;
+}
+
+.dark {
+  background-color: #705848;
+  color: #fff;
+}
+
+.steel {
+  background-color: #b8b8d0;
+}
+
+.fairy {
+  background-color: #ee99ac;
+}
+
