@@ -127,7 +127,7 @@ async function fetchPokemones(url) {
         </div>`;
   } catch (error) {
     html = `
-    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <div class="col">
       <div class="pokemon">
         <div class="imgContainer">
           <img 
