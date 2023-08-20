@@ -2,24 +2,18 @@
 #pokemonInfo {
   font-family: "Handjet", cursive;
 }
-
-#leftInfo {
-  height: 400px;
-  display: flex;
-  align-items: center;
+.hideSpinner {
+  display: none !important;
 }
-
 p,
 h1,
 h5 {
   margin: 0 !important;
   text-align: center;
 }
-
 .badge {
   font-size: 1.1rem;
 }
-
 
 p {
   font-size: 1.6rem;
@@ -30,115 +24,117 @@ h5 {
   font-size: 1.9rem;
   font-weight: bolder;
 }
-
-.hideSpinner {
-  display: none !important;
-}
-
-#pokemonInfo {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
 .imgContainer {
   display: flex;
   justify-content: center;
 }
-
 .pokemon {
   border-radius: 40px;
   padding: 30px;
   cursor: pointer;
 }
-
 img {
   height: 200px;
   width: 200px;
 }
 
-#modalPokeInfo h1{
-  color: black !important;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #pagination {
+    display: none;
+  }
+
+  img {
+    height: 200px;
+    width: 200px;
+  }
 }
 
-/* Tipo de pokemones y sus colores */
-.normal {
-  background-color: #a8a878;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  #pagination {
+    display: none;
+  }
 }
 
-.fire {
-  background-color: #ff9c54;
-  color: #fff;
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  #pagination {
+    display: none;
+  }
 }
 
-.water {
-  background-color: #6390f0;
-  color: #fff;
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  #pagination {
+    display: block;
+  }
 }
 
-.grass {
-  background-color: #78c850;
-}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  #pagination {
+    display: block;
+  }
 
-.electric {
-  background-color: #f8d030;
-  color: #fff;
-}
+  #pokeArray,
+  #pokemonInfo {
+    font-family: "Handjet", cursive;
+  }
 
-.ice {
-  background-color: #98d8d8;
-}
+  #leftInfo {
+    height: 400px;
+    display: flex;
+    align-items: center;
+  }
 
-.fighting {
-  background-color: #c03028;
-  color: #fff;
-}
+  p,
+  h1,
+  h5 {
+    margin: 0 !important;
+    text-align: center;
+  }
 
-.poison {
-  background-color: #a040a0;
-  color: #fff;
-}
+  .badge {
+    font-size: 1.1rem;
+  }
 
-.ground {
-  background-color: #e0c068;
-}
+  p {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
 
-.flying {
-  background-color: #a890f0;
-  color: #fff;
-}
+  h5 {
+    font-size: 1.9rem;
+    font-weight: bolder;
+  }
 
-.psychic {
-  background-color: #f85888;
-  color: #fff;
-}
+  .hideSpinner {
+    display: none !important;
+  }
 
-.bug {
-  background-color: #a8b820;
-}
+  #pokemonInfo {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
-.rock {
-  background-color: #b8a038;
-}
+  .imgContainer {
+    display: flex;
+    justify-content: center;
+  }
 
-.ghost {
-  background-color: #705898;
-  color: #fff;
-}
+  .pokemon {
+    border-radius: 40px;
+    padding: 30px;
+    cursor: pointer;
+  }
 
-.dragon {
-  background-color: #7038f8;
-  color: #fff;
-}
+  img {
+    height: 200px;
+    width: 200px;
+  }
 
-.dark {
-  background-color: #705848;
-  color: #fff;
-}
-
-.steel {
-  background-color: #b8b8d0;
-}
-
-.fairy {
-  background-color: #ee99ac;
+  #modalPokeInfo h1 {
+    color: black !important;
+  }
 }

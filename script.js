@@ -110,7 +110,7 @@ async function fetchPokemones(url) {
         </div>
       </div>
     </div>`;
-
+    //col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12
     html = `
         <div data-bs-toggle="modal" data-bs-target="#${nombrePokemon}" class="col">
           <div class="pokemon ${background}">
@@ -127,7 +127,7 @@ async function fetchPokemones(url) {
         </div>`;
   } catch (error) {
     html = `
-    <div class="col">
+    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
       <div class="pokemon">
         <div class="imgContainer">
           <img 

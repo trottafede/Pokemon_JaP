@@ -12,6 +12,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="poke_colors.css" />
 
     <!-- fonts.google -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,7 +25,7 @@
   <body>
     <div class="container">
       <div class="row">
-        <div id="leftInfo" class="col-6">
+        <div class="col-6" id="leftInfo">
           <div>
             <h1>Busca tu propio Pokemon</h1>
 
@@ -48,7 +49,7 @@
         </div>
         <div id="pokemonInfo" class="col-6"></div>
 
-        <div class="col-12">
+        <div id="pagination" class="col">
           <nav aria-label="Page navigation example">
             <ul class="pagination pagination-lg justify-content-center">
               <li onclick="handleClick(1)" class="page-item">
@@ -113,5 +114,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-
-
