@@ -16,24 +16,31 @@
   <body>
     <div class="container">
       <div class="row">
-        <div id="center" class="col-12">
-          <h1>Busca tu propio pokemon</h1>
-          <p>simplemente escribe el nombre del pokemon</p>
-          <div id="pokemonInfo"></div>
+        <div id="leftInfo" class="col-6">
           <div>
-            <div class="mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="pokemonName"
-                placeholder="Ingresa el nombre o ID del Pokémon"
-              />
+            <h1>Busca tu propio Pokemon</h1>
+
+            <div class="row mb-3 mt-3">
+              <label for="pokemonName" class="col-sm-2 col-form-label"
+                >Pokemon</label
+              >
+              <div class="col-sm-10">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="pokemonName"
+                  placeholder="Ingresa el nombre o ID del Pokémon"
+                />
+              </div>
             </div>
             <div class="mb-3">
               <button class="btn btn-primary" id="searchButton">Buscar</button>
             </div>
           </div>
+
+         
         </div>
+        <div id="pokemonInfo" class="col-6"></div>
 
         <div class="col-12">
           <nav aria-label="Page navigation example">
@@ -80,7 +87,7 @@
             </ul>
           </nav>
         </div>
-        
+
         <div class="d-flex justify-content-center">
           <div id="spinner" class="spinner-grow text-danger" role="status">
             <span class="visually-hidden">Loading...</span>

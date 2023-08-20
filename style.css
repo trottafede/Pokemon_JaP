@@ -1,3 +1,9 @@
+#leftInfo {
+  height: 400px;
+  display: flex;
+  align-items: center;
+}
+
 p,
 h1,
 h5 {
@@ -13,8 +19,8 @@ h5 {
   font-size: 1.1rem;
 }
 
-.hideSpinner{
-  display: none !important
+.hideSpinner {
+  display: none !important;
 }
 
 #pokemonInfo {
@@ -120,4 +126,3 @@ img {
 .fairy {
   background-color: #ee99ac;
 }
-
