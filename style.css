@@ -1,3 +1,8 @@
+#pokeArray,
+#pokemonInfo {
+  font-family: "Handjet", cursive;
+}
+
 #leftInfo {
   height: 400px;
   display: flex;
@@ -11,12 +16,19 @@ h5 {
   text-align: center;
 }
 
-p {
+.badge {
   font-size: 1.1rem;
 }
 
+
+p {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
 h5 {
-  font-size: 1.1rem;
+  font-size: 1.9rem;
+  font-weight: bolder;
 }
 
 .hideSpinner {
@@ -42,6 +54,10 @@ h5 {
 img {
   height: 200px;
   width: 200px;
+}
+
+#modalPokeInfo h1{
+  color: black !important;
 }
 
 /* Tipo de pokemones y sus colores */

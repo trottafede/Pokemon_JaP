@@ -30,6 +30,7 @@ async function fetchPokemones(url) {
 
   spinner.classList.remove("hideSpinner");
   let html = "";
+  let modal = "";
   try {
     const response = await fetch(url);
     const data = await response.json();
@@ -39,6 +40,11 @@ async function fetchPokemones(url) {
     const imagenPokemon2 = data.sprites.other["home"].front_default;
     const nombrePokemon = data.name.toUpperCase();
     const tipos = data.types.map((type) => type.type.name).join(", ");
+    const habilidades = data.abilities
+      .map((type) => type.ability.name)
+      .join(", ");
+
+    const peso = data.weight;
 
     if (!imagenPokemon1) {
       imagenPokemon1 = notFoundIMG;
@@ -84,20 +90,41 @@ async function fetchPokemones(url) {
       background = "fairy";
     }
 
-    html = `
-    <div class="col">
-      <div class="pokemon ${background}">
-        <div class="imgContainer">
-          <img src="${imagenPokemon1}" alt="${nombrePokemon}">
-        </div>
-        <div class="pokeDetails">
-          <h5>${nombrePokemon}</h5>
-          <p>${numeroPokemon}</p>
-          <p>${tipos}</p>
+    modal = `
+    <div class="modal fade" id="${nombrePokemon}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div id="modalPokeInfo" class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-6">
+              <img src="${imagenPokemon1}" alt="${nombrePokemon}">
+              </div>
+              <div class="col-6">
+                <p>Nombre: ${nombrePokemon}</p>
+                <p>Habilidades: [${habilidades}]</p>
+                <p>Peso: ${peso} </p>
+              </div>
+            </div>
+          </div>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
-    </div>
-    `;
+    </div>`;
+
+    html = `
+        <div data-bs-toggle="modal" data-bs-target="#${nombrePokemon}" class="col">
+          <div class="pokemon ${background}">
+            <span class="badge text-bg-secondary">${numeroPokemon}</span>
+            <div class="pokeDetails">
+              <h5>${nombrePokemon}</h5>
+              <div class="imgContainer">
+                <img src="${imagenPokemon1}" alt="${nombrePokemon}">
+              </div>
+              <p>${tipos}</p>
+            </div>
+          </div>
+          ${modal}
+        </div>`;
   } catch (error) {
     html = `
     <div class="col">
