@@ -38,7 +38,11 @@ img {
   width: 200px;
 }
 
-
+a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: red;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   #paginationPC {
@@ -52,15 +56,92 @@ img {
     height: 200px;
     width: 200px;
   }
+
+  /* Comments section */
+
+  #section_comentarios {
+    padding: 20px;
+    margin: 40px 0;
+    border-radius: 60px;
+    background-color: beige;
+  }
+
+  .miClaseComentarios {
+    text-align: center;
+  }
+
+  #showAllComments div {
+    background-color: rgb(249, 216, 241);
+    border-radius: 60px;
+    padding: 20px;
+  }
+
+  /* like */
+  .miClaseComentarios i {
+    color: red;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .miClaseComentarios div {
+    margin-bottom: 20px;
+  }
+
+  #showAllComments p {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  #paginationMobile {
-    display: block;
-  }
   #paginationPC {
     display: none;
+  }
+  #paginationMobile {
+    display: none;
+  }
+
+  img {
+    height: 200px;
+    width: 200px;
+  }
+
+  /* Comments section */
+
+  #section_comentarios {
+    padding: 20px;
+    margin: 40px 0;
+    border-radius: 60px;
+    background-color: beige;
+  }
+
+  .miClaseComentarios {
+    text-align: center;
+  }
+
+  #showAllComments div {
+    background-color: rgb(249, 216, 241);
+    border-radius: 60px;
+    padding: 20px;
+  }
+
+  /* like */
+  .miClaseComentarios i {
+    color: red;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .miClaseComentarios div {
+    margin-bottom: 20px;
+  }
+
+  #showAllComments p {
+    font-size: 1.2rem;
+    font-weight: 400;
   }
 }
 
@@ -89,7 +170,6 @@ img {
   #paginationMobile {
     display: none;
   }
-
 
   #paginationPC {
     display: block;
@@ -154,5 +234,44 @@ img {
 
   #modalPokeInfo h1 {
     color: black !important;
+  }
+
+  /* Comments section */
+
+  #section_comentarios {
+    padding-left: 400px !important;
+    padding-right: 400px !important;
+    padding: 40px;
+    margin: 40px 0;
+    border-radius: 60px;
+    background-color: beige;
+  }
+
+  .miClaseComentarios {
+    text-align: center;
+    padding-left: 400px !important;
+    padding-right: 400px !important;
+  }
+
+  #showAllComments div {
+    background-color: rgb(249, 216, 241);
+    border-radius: 60px;
+    padding: 20px;
+  }
+
+  /* like */
+  .miClaseComentarios i {
+    color: red;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .miClaseComentarios div {
+    margin-bottom: 20px;
+  }
+
+  .miClaseComentarios p {
+    font-size: 1rem !important;
+    font-weight: 400;
   }
 }

@@ -1,6 +1,33 @@
 const spinner = document.getElementById("spinner");
+let comentarios = [];
+const comentarBTN = document.getElementById("comentarBTN");
+const searchButton = document.getElementById("searchButton");
 
 document.addEventListener("DOMContentLoaded", async () => {
+  comentarBTN.addEventListener("click", handleCommentBTN);
+
+  searchButton.addEventListener("click", async () => {
+    spinner.classList.remove("hideSpinner");
+    const pokemonName = document
+      .getElementById("pokemonName")
+      .value.toLowerCase();
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+    result = await fetchPokemones(url);
+    document.getElementById("pokemonInfo").innerHTML = result;
+    spinner.classList.add("hideSpinner");
+  });
+
+  //agarro mi archivo local
+  const commentsDeArchivo = await fetch("./comments.json");
+  const commentsDeArchivoData = await commentsDeArchivo.json();
+
+  // si no existe local storage = crear local storage
+  comentarios =
+    JSON.parse(localStorage.getItem("comments")) || commentsDeArchivoData;
+
+  //mostrar los comentarios del local
+  showAllComments(comentarios);
+
   const url = "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0";
   const response = await fetch(url);
   const data = await response.json();
@@ -11,17 +38,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     result += await fetchPokemones(pokemon.url);
   }
   document.getElementById("pokeArray").innerHTML = result;
-});
-
-document.getElementById("searchButton").addEventListener("click", async () => {
-  spinner.classList.remove("hideSpinner");
-  const pokemonName = document
-    .getElementById("pokemonName")
-    .value.toLowerCase();
-  const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
-  result = await fetchPokemones(url);
-  document.getElementById("pokemonInfo").innerHTML = result;
-  spinner.classList.add("hideSpinner");
 });
 
 async function fetchPokemones(url) {
@@ -107,9 +123,10 @@ async function fetchPokemones(url) {
             </div>
           </div>
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-        </div>
+          </div>
       </div>
     </div>`;
+
     //col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12
     html = `
         <div data-bs-toggle="modal" data-bs-target="#${nombrePokemon}" class="col">
@@ -147,7 +164,7 @@ async function fetchPokemones(url) {
   return html;
 }
 
-const handleClick = async (pagina) => {
+const handlePagination = async (pagina) => {
   let offset = 0;
   switch (pagina) {
     case 1:
@@ -202,4 +219,59 @@ const handleClick = async (pagina) => {
     result += await fetchPokemones(pokemon.url);
   }
   document.getElementById("pokeArray").innerHTML = result;
+};
+
+const handleAddLike = (id) => {
+  let singleComment = comentarios.find((comment) => comment.id == id);
+  singleComment.isLiked = !singleComment.isLiked;
+
+  //remuevo el objeto viejo y guardo el nuevo en el local storage
+  refreshStorage();
+
+  //volver a  mostrar en la lista de comentarios el local storage
+  showAllComments(comentarios);
+};
+
+const showAllComments = (array_comments) => {
+  let result = "";
+  for (const comment of array_comments) {
+    result += ` 
+    <div>
+      <h4>${comment.usuario}</h4>
+      <p>${comment.comentario}</p>
+      ${
+        comment.isLiked
+          ? ` <i onclick="handleAddLike(${comment.id})" class="fa-solid fa-heart"></i>`
+          : ` <i onclick="handleAddLike(${comment.id})" class="fa-regular fa-heart"></i>`
+      }
+    </div>`;
+  }
+  document.getElementById("showAllComments").innerHTML = result;
+};
+
+const handleCommentBTN = () => {
+  //agarrar los inputs
+  const userInput = document.getElementById("userInput").value;
+  const userComment = document.getElementById("userComment").value;
+
+  const commentarioAlLocal = {
+    id: comentarios.length + 1,
+    usuario: userInput,
+    comentario: userComment,
+    isLiked: false,
+  };
+
+  //agregar al local storage
+  comentarios.push(commentarioAlLocal);
+
+  //remuevo el objeto viejo y guardo el nuevo en el local storage
+  refreshStorage();
+
+  //volver a  mostrar en la lista de comentarios el local storage
+  showAllComments(comentarios);
+};
+
+const refreshStorage = () => {
+  localStorage.removeItem("comments");
+  localStorage.setItem("comments", JSON.stringify(comentarios));
 };
