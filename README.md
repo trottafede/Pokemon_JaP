@@ -7,3 +7,6 @@
 Tienen total libertad en la tarea siempre y cuando respeten cada "se pide".
 Tienen 70 minutos para realizarla
 Pasaré por los grupos para ver como la van realizar y para quitar dudas que se vayan generando.
+
+Proyecto creado realizando el curso de Jovenes a programar.
+Se consume la api https://pokeapi.co/
